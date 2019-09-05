@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>board</title>
+</head>
+ 
+    <form name="form" action="/board/save" method="post">
+        <table border="1" style="width:600px">
+            <caption>게시판</caption>
+            <colgroup>
+                <col width='15%' />
+                <col width='*%' />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>작성자</td>
+                    <td><input type="text" name="brdwriter" size="20" maxlength="20" value="<%=result.brdwriter%>"></td>
+                </tr>
+                <tr>
+                    <td>제목</td>
+                    <td><input type="text" name="brdtitle" size="70" maxlength="250" value="<%=result.brdtitle%>"></td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td><textarea name="brdcontent" rows="5" cols="60"><%=result.brdcontent%></textarea></td>
+                </tr>
+            </tbody>
+        </table>   
+        <a href="#" onclick="form.submit()">저장</a>
+        <input name="brdno" value="<%=result.brdno%>" type="hidden">
+    <form>
+</body>
+</html>

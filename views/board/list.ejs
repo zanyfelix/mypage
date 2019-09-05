@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>board</title>    
 </head>
 <body>
+    <a href="/board/form">글쓰기</a>
     <table border="1" style="width:600px">
         <caption>게시판</caption>
         <colgroup>
@@ -26,7 +28,7 @@
         %>
             <tr>
                 <td><%=rows[i].brdno%></td>
-                <td><a href='/board1/read?brdno=<%=rows[i].BRDNO%>'><%=rows[i].brdtitle%></a></td>
+                <td><a href='/board/read?brdno=<%=rows[i].brdno%>'><%=rows[i].brdtitle%></a></td>
                 <td><%=rows[i].brdwriter%></td>
                 <td><%=rows[i].brddate%></td>
             </tr>
