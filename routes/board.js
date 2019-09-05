@@ -65,9 +65,8 @@ router.get('/form', function(req,res,next) {
     });    
 });
 
-router.post('/save', function(req,res,next) {    
-    var data = [req.body.brdtitle, req.body.brdcontent, req.body.brdwriter]; 
-    console.log(data);
+router.post('/save', function(req,res,next) {            
+    var data = [req.body.brdtitle, req.body.brdcontent, req.body.brdwriter];     
     pool.connect(function(err, client, done) {
         var sql = "";
         if(req.body.brdno) {
