@@ -6,8 +6,20 @@ var client = new pg.Client(connectionString);
 client.connect();
 
 router.get('/', function(req, res, next) {
-    res.render('board', { title: 'Express' });
+    res.redirect('/board/list');        
 });
+
+router.get('/list', function(req, res, next) {
+    
+    var sql = "SELECT brdno, brdtitle, brdwriter, brdcontent, brddate FROM BOARD";
+    client.query(sql, function  (err, result) {
+        if(err) {
+            console.log("err : " + err);
+        }
+        res.render('board/list', {rows: result? result.rows:{}});        
+    });
+
+});    
 //     client.connect();
 //     client.query('select now()', (err,res) => {
 //         console.log(err, res)

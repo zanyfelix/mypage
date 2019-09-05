@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <table border="1" style="width:600px">
+        <caption>게시판</caption>
+        <colgroup>
+            <col width='8%' />
+            <col width='*%' />
+            <col width='15%' />
+            <col width='15%' />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>등록자</th>
+                <th>등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%
+             for(var i=0; i<rows.length; i++) {
+        %>
+            <tr>
+                <td><%=rows[i].brdno%></td>
+                <td><a href='/board1/read?brdno=<%=rows[i].BRDNO%>'><%=rows[i].brdtitle%></a></td>
+                <td><%=rows[i].brdwriter%></td>
+                <td><%=rows[i].brddate%></td>
+            </tr>
+        <%
+             }
+        %>
+        </tbody>
+    </table>
+</body>
+</html>
