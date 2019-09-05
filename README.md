@@ -1,4 +1,4 @@
-# Make mypage
+# Make Mypage
 
 # Technique
 * node.js
