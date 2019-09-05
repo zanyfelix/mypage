@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+ 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>board</title>
+</head>
+ 
+        <table border="1" style="width:600px">
+            <caption>게시판</caption>
+            <colgroup>
+                <col width='15%' />
+                <col width='*%' />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>작성자</td>
+                    <td><%=row.brdwriter%></td>
+                </tr>
+                <tr>
+                    <td>제목</td>
+                    <td><%=row.brdtitle%></td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td><%=row.brdcontent%></td>
+                </tr>
+            </tbody>
+        </table>   
+        <a href="#" onclick="history.back(-1)">List</a>
+        <a href="/board_firebase/boardDelete?brdno=<%=row.brdno%>">Delete</a>
+        <a href="/board_firebase/boardForm?brdno=<%=row.brdno%>">Modify</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <head>
+  <meta charset="UTF-8">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-database.js"></script>
+  </head>
+  <h1>Firebase Test</h1>
+  <p>Firebase console에 데이터가 추가 되었는지 확인</p>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBsTSUNZN8IXswVfMrqSad-gqKXtECNHbs",
+    authDomain: "mypage-aa279.firebaseapp.com",
+    databaseURL: "https://mypage-aa279.firebaseio.com",
+    projectId: "mypage-aa279",
+    storageBucket: "",
+    messagingSenderId: "427877068630",
+    appId: "1:427877068630:web:9b293bc3d355005f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+   
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+ 
+  var postData = {
+    brdno: newPostKey,
+    brdwriter: "박광하",
+    brdtitle: "게시판 제목 테스트",
+    brdcontent: "게시물 내용 테스트",
+    brddate: Date.now()
+  };
+ 
+  var updates = {};
+  updates['/board/' + newPostKey] = postData;
+ 
+  firebase.database().ref().update(updates);
+           
+</script>
